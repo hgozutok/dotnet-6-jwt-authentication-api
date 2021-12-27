@@ -21,7 +21,9 @@ public class UserService : IUserService
     // users hardcoded for simplicity, store in a db with hashed passwords in production applications
     private List<User> _users = new List<User>
     {
-        new User { Id = 1, FirstName = "Test", LastName = "User", Username = "test", Password = "test" }
+        //need to be implemented
+        new User { Id = 1, FirstName = "Hugo", LastName = "Spring", Username = "hugo", Password = "spring" ,
+        Image="https://yt3.ggpht.com/ytc/AAUvwnjlrnkK6We2AnVUcDgJ11qxJn7nRhdCy_aSm-jPmA=s900-c-k-c0x00ffffff-no-rj" }
     };
 
     private readonly AppSettings _appSettings;
@@ -34,7 +36,7 @@ public class UserService : IUserService
     public AuthenticateResponse Authenticate(AuthenticateRequest model)
     {
         var user = _users.SingleOrDefault(x => x.Username == model.Username && x.Password == model.Password);
-
+       
         // return null if user not found
         if (user == null) return null;
 

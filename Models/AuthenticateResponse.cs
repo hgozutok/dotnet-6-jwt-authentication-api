@@ -9,7 +9,7 @@ public class AuthenticateResponse
     public string LastName { get; set; }
     public string Username { get; set; }
     public string Token { get; set; }
-
+    public string Image { get; set; }
 
     public AuthenticateResponse(User user, string token)
     {
@@ -17,6 +17,7 @@ public class AuthenticateResponse
         FirstName = user.FirstName;
         LastName = user.LastName;
         Username = user.Username;
+        Image = user.Image;
         Token = token;
     }
 }
